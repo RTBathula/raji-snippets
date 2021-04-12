@@ -24,7 +24,7 @@ Defaults
 ```
 skip = 0;
 limit = 30;
-sort = first_name:asc (this will be splited by ':'' to get column and order)
+sort = first_name:asc (this will be splited by ':' to get column and order)
 ```
 
 2. http://localhost:8081/cars/year?valid_from=1980
