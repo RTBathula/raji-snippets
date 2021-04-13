@@ -4,12 +4,8 @@ const fs = require('fs');
 
 const isFiniteNumber = value => typeof value === 'number' && !isNaN(value) && isFinite(value);
 
-const sortASC = (valueA, valueB) => {
+const sort = (valueA, valueB) => {
 	return isFiniteNumber(valueA) ? (valueA - valueB) : valueA.trim().localeCompare(valueB.trim());	
-};
-
-const sortDESC = (valueA, valueB) => {
-	return isFiniteNumber(valueA) ? (valueB - valueA) : valueB.trim().localeCompare(valueA.trim());	
 };
 
 // E.g: /products?skip=0&limit=30&sort=first_name:desc
@@ -29,7 +25,7 @@ app.get('/products', (req, res) => {
 		const finalList = list.slice(skip, sliceLimit).sort((a, b) => {
 			const valueA = a[sortColumn];
 			const valueB = b[sortColumn];
-			return sortOrder === 'asc' ? sortASC(valueA, valueB) : sortDESC(valueA, valueB);					
+			return sortOrder === 'asc' ? sort(valueA, valueB) : sort(valueB, valueA);					
 		});
 
 	  	return res.status(200).send(finalList);
