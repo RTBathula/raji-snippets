@@ -21,8 +21,8 @@ app.get('/products', (req, res) => {
 	fs.readFile('./MOCK_DATA.json', 'utf8', (err, data) => {
 		const list = JSON.parse(data);
 		
-		const sliceLimit = (skip + limit);
-		const finalList = list.slice(skip, sliceLimit).sort((a, b) => {
+		const slicePosition = (skip + limit);
+		const finalList = list.slice(skip, slicePosition).sort((a, b) => {
 			const valueA = a[sortColumn];
 			const valueB = b[sortColumn];
 			return sortOrder === 'asc' ? sort(valueA, valueB) : sort(valueB, valueA);					
