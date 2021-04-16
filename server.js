@@ -1,6 +1,7 @@
 var express = require('express');
 var app = express();
 const fs = require('fs');
+const wiki = require('./wiki-parse');
 
 const isFiniteNumber = value => typeof value === 'number' && !isNaN(value) && isFinite(value);
 
@@ -42,6 +43,12 @@ app.get('/cars/year', (req, res) => {
 		const finalList = list.filter((obj) => (obj.car_model_year > validFrom));
 	  	return res.status(200).send(finalList);
 	});
+});
+
+wiki.getTopicCount('philosophy').then((count) => {
+	console.log(count);
+}).catch((err) => {
+	console.log(err);
 });
 
 const PORT = 8081;
