@@ -1,10 +1,15 @@
 {
   "name": "raji-snippets",
   "version": "1.0.0",
-  "description": "",
-  "main": "server.js",
+  "description": "# Getting Started Fork and clone the repository. Install dependencies with:",
+  "main": "index.js",
+  "dependencies": {
+    "luhn": "^2.4.1",
+    "yargs": "^16.2.0"
+  },
+  "devDependencies": {},
   "scripts": {
-    "start": "node server.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -15,9 +20,5 @@
   "bugs": {
     "url": "https://github.com/RTBathula/raji-snippets/issues"
   },
-  "homepage": "https://github.com/RTBathula/raji-snippets#readme",
-  "dependencies": {
-    "axios": "^0.21.1",
-    "express": "^4.17.1"
-  }
+  "homepage": "https://github.com/RTBathula/raji-snippets#readme"
 }
